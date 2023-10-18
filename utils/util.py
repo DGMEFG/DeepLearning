@@ -7,8 +7,19 @@ import matplotlib as ma
 import matplotlib.pyplot as plt
 from IPython import display
 dml = torch_directml.device()
+import random
 import time
+from torch.utils import data
 
+def synthetic_data(w, b, nums):
+    X = torch.normal(0, 1, (nums,len(w)))
+    y = torch.matmul(X, w) + b
+    y += torch.normal(0, 0.01, y.shape)
+    return X, y.view(-1)
+
+def load_array(data_array, batch_size, is_train = True):
+    dataset = data.TensorDataset(*data_array)
+    return data.DataLoader(dataset, batch_size, shuffle=is_train)
 
 def load_data_fashion_mnist(batch_size, resize=None):
     trans = [transforms.ToTensor()]
