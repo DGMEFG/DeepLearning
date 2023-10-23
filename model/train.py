@@ -2,10 +2,8 @@ import torch
 import torchvision
 from torch.utils import data
 from torchvision import transforms
-import torch_directml
 import matplotlib as ma
 import matplotlib.pyplot as plt
-dml = torch_directml.device()
 from IPython import display
 import time
 from __init__ import init

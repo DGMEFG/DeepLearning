@@ -2,11 +2,9 @@ import torch
 import torchvision
 from torch.utils import data
 from torchvision import transforms
-import torch_directml
 import matplotlib as ma
 import matplotlib.pyplot as plt
 from IPython import display
-dml = torch_directml.device()
 import random
 import time
 from torch.utils import data
